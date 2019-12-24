@@ -30,3 +30,19 @@
    
 * 휴가 취소
    * [로그인](https://github.com/syndersonLEE/make-request-vacation/wiki/%EB%A1%9C%EA%B7%B8%EC%9D%B8) -> [휴가 신청 리스트](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%8B%A0%EC%B2%AD%EB%A6%AC%EC%8A%A4%ED%8A%B8) -> [휴가상태보기](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%83%81%ED%83%9C%EB%B3%B4%EA%B8%B0) -> [휴가 취소하기](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0)
+   
+   
+   
+## 배포
+
+* [AWS EC2](https://aws.amazon.com/ko/ec2/?sc_channel=PS&sc_campaign=acquisition_KR&sc_publisher=google&sc_medium=english_ec2_b&sc_content=ec2_e&sc_detail=awsec2&sc_category=ec2&sc_segment=177228231544&sc_matchtype=e&sc_country=KR&s_kwcid=AL!4422!3!177228231544!e!!g!!awsec2&ef_id=WkRozwAAAnO-lPWy:20180412120123:s) - 클라우드 환경 컴퓨팅 시스템
+* [AWS RDS](https://aws.amazon.com/ko/rds/) - 클라우드 환경 데이터베이스 관리 시스템
+
+## 사용된 도구 
+
+* [Node.js](https://nodejs.org/ko/) - Chrome V8 자바스크립트 엔진으로 빌드된 자바스크립트 런타임
+* [Express.js](http://expressjs.com/ko/) - Node.js 웹 애플리케이션 프레임워크
+* [NPM](https://rometools.github.io/rome/) - 자바 스크립트 패키지 관리자
+* [PM2](http://pm2.keymetrics.io/) - Express 앱용 프로세스 관리자
+* [vscode](https://code.visualstudio.com/) - 편집기
+* [Mysql](https://www.mysql.com/) - DataBase
