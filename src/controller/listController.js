@@ -39,8 +39,8 @@ async function getListDetail(req, res) {
             errResponse(res, returnCode.BAD_REQUEST, '존재하지 않는 파라미터');
         }
         else {
-            console.log('휴가 상태 호출"');
-            response(res, returnCode.OK, '휴가 상태 호출"', listDetailResult);
+            console.log('휴가 상태 호출');
+            response(res, returnCode.OK, '휴가 상태 호출', listDetailResult);
         }
 
     } catch (error) {
