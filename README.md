@@ -24,3 +24,9 @@
 ![img](https://user-images.githubusercontent.com/30704569/71418624-b6b98d00-26ae-11ea-9115-91be163e15b3.PNG)
 
 * [URL wiki](https://github.com/syndersonLEE/make-request-vacation/wiki)
+
+* 휴가 신청
+   * [로그인](https://github.com/syndersonLEE/make-request-vacation/wiki/%EB%A1%9C%EA%B7%B8%EC%9D%B8) -> [휴가 신청 리스트](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%8B%A0%EC%B2%AD%EB%A6%AC%EC%8A%A4%ED%8A%B8) -> [휴가 신청하기/조회](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0-%EC%A1%B0%ED%9A%8C) -> [휴가 신청하기](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0)
+   
+* 휴가 취소
+   * [로그인](https://github.com/syndersonLEE/make-request-vacation/wiki/%EB%A1%9C%EA%B7%B8%EC%9D%B8) -> [휴가 신청 리스트](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%8B%A0%EC%B2%AD%EB%A6%AC%EC%8A%A4%ED%8A%B8) -> [휴가상태보기](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%83%81%ED%83%9C%EB%B3%B4%EA%B8%B0) -> [휴가 취소하기](https://github.com/syndersonLEE/make-request-vacation/wiki/%ED%9C%B4%EA%B0%80%EC%B7%A8%EC%86%8C%ED%95%98%EA%B8%B0)
