@@ -20,3 +20,7 @@
     * 연차를 모두 사용한 경우 휴가를 신청할 수 없습니다.
     * 추가 기능: 사용 일수를 입력하는 대신 시작일, 종료일을 가지고 공휴일을 제외하고 계산해도 됩니다.
 * 아직 시작하지 않은 휴가는 취소할 수 있습니다.
+
+![img](https://user-images.githubusercontent.com/30704569/71418624-b6b98d00-26ae-11ea-9115-91be163e15b3.PNG)
+
+* [URL wiki](https://github.com/syndersonLEE/make-request-vacation/wiki)
