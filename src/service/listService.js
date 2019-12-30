@@ -39,7 +39,9 @@ async function getlistDetail(userToken, listIdx) {
             data.applyDate = moment(data.applyDate).format('YYYY-MM-DD');
             data.vacationStartDate = moment(data.vacationStartDate).format('YYYY-MM-DD');
             data.vacationEndDate = moment(data.vacationEndDate).format('YYYY-MM-DD');
-    
+            if(data.vacationType < 1) {
+                delete data.vacationEndDate;
+            }
             return data;
         }))
         return listDetail;

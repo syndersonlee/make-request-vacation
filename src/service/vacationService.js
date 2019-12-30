@@ -14,7 +14,7 @@ async function postVacation(userToken, documentData) {
         const remainVacation = userData[0].userVacation;
         let applyTime;
         if(documentData.vacationTime < 1){
-            applyTime = documentData.vacationTime;
+            applyTime = documentData.vacationType;
         } else {
             applyTime = await checkVacationDate(documentData.vacationStartDate, documentData.vacationEndDate);
         }
@@ -22,11 +22,11 @@ async function postVacation(userToken, documentData) {
         if(applyTime > remainVacation) {
             return -2;
         } else {
+            const minusDate = applyTime * -1;
             let documentDto = documentData;
             documentDto['userIdx'] = userId.idx;
             documentDto['applyDate'] = moment().format('YYYY-MM-DD');
-            documentDto['vacationType'] = documentData['vacationTime'];
-            console.log(documentDto);
+            await userDao.updateUserVacation(minusDate, userId.idx);
             await documentDao.insertDocument(documentDto);
             return 1;
         }
