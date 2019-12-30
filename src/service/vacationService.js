@@ -17,19 +17,30 @@ async function postVacation(userToken, documentData) {
             applyTime = documentData.vacationType;
         } else {
             applyTime = await checkVacationDate(documentData.vacationStartDate, documentData.vacationEndDate);
+            if(applyTime > remainVacation) {
+                return -2;
+            } else if(applyTime < 0 || applyTime == undefined) {
+                return -3;
+            }
         }
 
-        if(applyTime > remainVacation) {
-            return -2;
-        } else {
-            const minusDate = applyTime * -1;
-            let documentDto = documentData;
-            documentDto['userIdx'] = userId.idx;
-            documentDto['applyDate'] = moment().format('YYYY-MM-DD');
-            await userDao.updateUserVacation(minusDate, userId.idx);
-            await documentDao.insertDocument(documentDto);
-            return 1;
+        if(moment(documentData.vacationStartDate).format('YYYY-MM-DD') == undefined) {
+            return -3;
         }
+
+        const minusDate = applyTime * -1;
+        let documentDto = documentData;
+        documentDto['userIdx'] = userId.idx;
+        documentDto['applyDate'] = moment().format('YYYY-MM-DD');
+
+        if (documentDto['vacationType'] >= 1) {
+            documentDto['vacationType'] = 1;
+        }
+
+
+        await userDao.updateUserVacation(minusDate, userId.idx);
+        await documentDao.insertDocument(documentDto);
+        return 1;
     }
 
 }

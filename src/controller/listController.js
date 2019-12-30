@@ -18,8 +18,8 @@ async function deleteList(req, res) {
             errResponse(res, returnCode.BAD_REQUEST, '이미 지난 휴가입니다');
         }
         else {
-            console.log('게시판 성공');
-            response(res, returnCode.OK, '게시판 성공');
+            console.log('휴가 취소 성공');
+            response(res, returnCode.OK, '휴가 취소 성공');
         }
 
     } catch (error) {
@@ -37,28 +37,15 @@ async function getListDetail(req, res) {
         } else if(listDetailResult == -2) {
             console.log('존재하지 않는 파라미터');
             errResponse(res, returnCode.BAD_REQUEST, '존재하지 않는 파라미터');
+        } else if(listDetailResult == -3){
+            console.log('자기 게시판만 조회 가능');
+            errResponse(res, returnCode.FORBIDDEN, '자기 게시판만 조회 가능');
         }
         else {
             console.log('휴가 상태 호출');
             response(res, returnCode.OK, '휴가 상태 호출', listDetailResult);
         }
 
-    } catch (error) {
-        console.log(error.message);
-        errResponse(res, returnCode.INTERNAL_SERVER_ERROR, '서버 오류');
-    }
-}
-
-async function getList(req, res) {
-    try {
-        const listResult = await listService.getList(req.headers.authorization);
-        if(listResult == -1) {
-            console.log('토큰 오류');
-            errResponse(res, returnCode.UNAUTHORIZED, '토큰 오류');
-        } else {
-            console.log('게시판 성공');
-            response(res, returnCode.OK, '게시판 성공', listResult);
-        }
     } catch (error) {
         console.log(error.message);
         errResponse(res, returnCode.INTERNAL_SERVER_ERROR, '서버 오류');

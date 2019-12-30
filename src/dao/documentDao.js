@@ -7,7 +7,7 @@ async function selectAllDocument(userIdx) {
 
 async function selectListDetailByIdx(listIdx) {
     const selectQuery = `SELECT documentTitle, applyDate, vacationStartDate, vacationEndDate, vacationType, comment
-    FROM document WHERE documentIdx = ?`
+    FROM document WHERE documentIdx = ? AND userIdx = ?`
     return await mysql.query(selectQuery, [listIdx]);
 }
 

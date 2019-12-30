@@ -12,6 +12,9 @@ async function postVacation(req, res){
         } else if(vacationResult == -2) {
             console.log('남은 휴가 일수보다 더 많은 요청입니다');
             errResponse(res, returnCode.BAD_REQUEST, '남은 휴가 일수보다 더 많은 요청입니다');
+        } else if(vacationResult == -3) {
+            console.log('요청에 맞지 않는 형식');
+            errResponse(res, returnCode.BAD_REQUEST, '요청에 맞지 않는 형식');
         }
         else {
             console.log('휴가 신청 성공');

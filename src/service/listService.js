@@ -34,17 +34,32 @@ async function getlistDetail(userToken, listIdx) {
         return -1;
     } else if(listDetail.length == 0) {
         return -2;
+    } else if(listDetail[0].userIdx != userId.idx){
+        return -3;
     } else {
-        await Promise.all(listDetail.map((data) => {
-            data.applyDate = moment(data.applyDate).format('YYYY-MM-DD');
-            data.vacationStartDate = moment(data.vacationStartDate).format('YYYY-MM-DD');
-            data.vacationEndDate = moment(data.vacationEndDate).format('YYYY-MM-DD');
-            if(data.vacationType < 1) {
-                delete data.vacationEndDate;
-            }
-            return data;
-        }))
-        return listDetail;
+        let vacationType = listDetail[0].vacationType;
+        if ( vacationType >= 1 ) {
+            vacationType = 1;
+        }
+        
+        let parsedDocument = {
+            documentTitle : listDetail[0].documentTitle,
+            applyDate : moment(listDetail[0].applyDate).format('YYYY-MM-DD'),
+            vacationStartDate : moment(listDetail[0].vacationStartDate).format('YYYY-MM-DD'),
+            vacationEndDate : moment(listDetail[0].vacationEndDate).format('YYYY-MM-DD'),
+            vacationType : vacationType,
+            comment : listDetail[0].comment
+        }
+
+        const vacationDate = await checkVacationDate(parsedDocument.vacationStartDate, parsedDocument.vacationEndDate);
+
+        if(vacationType < 1) {
+            delete parsedDocument.vacationEndDate;
+        } else {
+            parsedDocument['vacationDate'] = vacationDate;
+        }
+
+        return parsedDocument;
         
     }
 }
